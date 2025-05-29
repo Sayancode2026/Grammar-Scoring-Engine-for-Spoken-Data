@@ -111,17 +111,7 @@ This project aims to develop a **Grammar Scoring Engine** that automatically eva
 
 ---
 
-## 📂 Folder Structure
 
-```
-📦 grammar-scoring-engine/
- ┣ 📂 audio/
- ┣ 📄 train.csv
- ┣ 📄 test.csv
- ┣ 📄 sample_submission.csv
- ┣ 📄 model_training.ipynb
- ┗ 📜 README.md
-```
 
 ---
 
