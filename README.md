@@ -133,7 +133,7 @@ pip install librosa scikit-learn pandas matplotlib xgboost
 
 ## 👤 Author
 
-**Your Name**  
+**Sayan Bardhan**  
 Email: [sayanbardhan2023@gmail.com](mailto:sayanbardhan2023@gmail.com)
 
 ---
