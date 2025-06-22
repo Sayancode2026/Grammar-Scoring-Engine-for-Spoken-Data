@@ -105,7 +105,7 @@ Predicted Future Value: Rs.317216.91
 
 ---
 
-> Made with 💡 recursion and a dash of optimization.
+> Made with 💡 recursion and a passion.
 
 ```
 
