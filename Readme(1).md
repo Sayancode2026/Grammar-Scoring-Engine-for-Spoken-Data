@@ -1,82 +1,128 @@
-```
-
 ```markdown
-# ⚡ E-Commerce Platform: Search Algorithm Analysis
+# 🏭 Factory Method Pattern: Document Management System
 
-This repository contains a technical analysis and implementation of search algorithms for an e-commerce platform. It demonstrates the critical performance differences between Linear and Binary search and provides a recommendation for building scalable systems.
+![Language](https://img.shields.io/badge/Language-Java-blue.svg)
+![Design Pattern](https://img.shields.io/badge/Design%20Pattern-Factory%20Method-orange)
+![License](https://img.shields.io/badge/License-MIT-yellow.svg)
+
+A clear and concise Java implementation of the **Factory Method Design Pattern**. This project simulates a document management system to demonstrate how to create objects without specifying the exact class of object that will be created.
 
 ---
 
-## 📂 Table of Contents
+## 📝 Table of Contents
 
-- [Project Overview](#-project-overview)
-- [💡 Core Concepts Explained](#-core-concepts-explained)
+- [About the Factory Method Pattern](#-about-the-factory-method-pattern)
 - [🏗️ Project Structure](#️-project-structure)
+- [⚙️ Prerequisites](#️-prerequisites)
 - [🚀 How to Compile and Run](#-how-to-compile-and-run)
-- [📊 Analysis and Recommendation](#-analysis-and-recommendation)
 - [✅ Expected Output](#-expected-output)
+- [📄 License](#-license)
 
 ---
 
-## 🌐 Project Overview
+## 🧠 About the Factory Method Pattern
 
-A fast and reliable search function is essential for a positive user experience on any e-commerce site. This project analyzes two fundamental search algorithms—Linear Search and Binary Search—to illustrate the importance of algorithmic efficiency. It serves as a practical guide to understanding why choosing the right algorithm is critical for application performance and scalability.
+The Factory Method is a creational design pattern that solves the problem of creating product objects without specifying their concrete classes.
 
-## 💡 Core Concepts Explained
+> The Factory Method defines an interface for creating an object, but lets subclasses decide which class to instantiate. This lets a class defer instantiation to its subclasses.
 
-### Asymptotic Notation (Big O)
-Big O notation is used to describe an algorithm's performance as the input data size ($n$) grows. It provides a high-level understanding of scalability by focusing on the **worst-case scenario**.
-
-- **O(n) - Linear Time:** Execution time grows linearly with the number of items. Doubling the data doubles the time.
-- **O(log n) - Logarithmic Time:** Execution time grows by a very small amount as data doubles. This is the hallmark of highly efficient, scalable algorithms.
+**Key Benefits Demonstrated:**
+-   **Loose Coupling:** The client code (in `Main.java`) is decoupled from the concrete product implementations (`WordDocument`, `PdfDocument`, etc.).
+-   **Extensibility (Open/Closed Principle):** The system can be easily extended to support new document types (e.g., `CsvDocument`) by adding a new product class and a corresponding factory, all without modifying existing client code.
 
 ## 🏗️ Project Structure
 
-The project is organized using a standard package-based structure to ensure clean separation of concerns.
+The project follows a standard Java package structure to maintain a clean separation of concerns between the product, the creator, and the client.
 
 ```
 
-.
-└── src
-└── com
-└── ecommerce
-├── model
-│   └── Product.java        \# Data entity for a product
-├── search
-│   └── SearchAlgorithm.java  \# Contains the search logic
-└── Main.java               \# Main application entry point/test harness
+Week1_Design Patterns and  Priciples_Solutions/
+
+    ├── 02_Implementing_the_Factory_Method_Pattern/
+
+    │  
+
+    │
+
+    ├── Code/
+
+    │       └── src/
+
+    │           └── com/
+
+    │               └── example/
+
+    │                   ├── document/
+
+    │                   │   ├── Document.java
+
+    │                   │   ├── ExcelDocument.java
+
+    │                   │   ├── PdfDocument.java
+
+    │                   │   └── WordDocument.java
+
+    │                   │
+
+    │                   ├── factory/
+
+    │                   │   ├── DocumentFactory.java
+
+    │                   │   ├── ExcelDocumentFactory.java
+
+    │                   │   ├── PdfDocumentFactory.java
+
+    │                   │   └── WordDocumentFactory.java
+
+    │                   │
+
+    │                   └── Main.java
+
+    │
+
+    └── Output/
+
+        └── factory_method_output.png 
 
 ````
 
+## ⚙️ Prerequisites
+
+To build and run this project from the command line, you need:
+
+-   Java Development Kit (JDK) - Version 8 or higher.
+-   A terminal or command-line interface (CLI).
+
 ## 🚀 How to Compile and Run
 
-Follow these instructions to compile and run the project from your command line.
+This section provides the step-by-step instructions to compile and execute the project.
 
 > [!IMPORTANT]
-> All commands **must** be executed from the **`src`** directory. This is the root of the package structure and is required for `javac` to resolve the package paths correctly.
+> All commands **must** be executed from the **`src`** directory. This is the root of the package structure (`com/example/...`) and is crucial for the Java compiler (`javac`) to locate the files correctly.
 
 <br/>
 
 <details>
 <summary><strong>Windows Instructions (Command Prompt / PowerShell)</strong></summary>
 
-1.  **Open your terminal** and navigate to this project's `src` directory.
+1.  **Open your terminal** and navigate to the project's `src` directory.
 
     ```powershell
-    # Example: cd C:\path\to\your\project\ECommerceSearchOptimization\src
-    cd \path\to\your\project\ECommerceSearchOptimization\src
+    # Replace the path with the actual path to your project
+    cd "E:\path\to\your\project\FactoryMethodPatternExample\code\src"
     ```
 
-2.  **Compile all `.java` source files.** The `javac` command compiles all listed files, resolving dependencies between them.
+2.  **Compile all `.java` source files.** The `javac` command needs to know about all dependencies at once.
 
     ```powershell
-    javac com\ecommerce\model\Product.java com\ecommerce\search\SearchAlgorithm.java com\ecommerce\Main.java
+    # The command uses backslashes for the path and compiles all necessary files
+    javac com\example\document\*.java com\example\factory\*.java com\example\Main.java
     ```
 
-3.  **Run the application.** Use the `java` command with the fully qualified name of the main class (`package.ClassName`).
+3.  **Run the application.** Use the `java` command with the fully qualified name of the main class.
 
     ```powershell
-    java com.ecommerce.Main
+    java com.example.Main
     ```
 
 </details>
@@ -84,54 +130,57 @@ Follow these instructions to compile and run the project from your command line.
 <details>
 <summary><strong>macOS / Linux Instructions (Bash / Zsh)</strong></summary>
 
-1.  **Open your terminal** and navigate to this project's `src` directory.
+1.  **Open your terminal** and navigate to the project's `src` directory.
 
     ```bash
-    # Example: cd /Users/YourUser/projects/ECommerceSearchOptimization/src
-    cd /path/to/your/project/ECommerceSearchOptimization/src
+    # Replace the path with the actual path to your project
+    cd /path/to/your/project/FactoryMethodPatternExample/code/src
     ```
 
-2.  **Compile all `.java` source files.** The `javac` command compiles all listed files, resolving dependencies between them.
+2.  **Compile all `.java` source files.** The `javac` command needs to know about all dependencies at once.
 
     ```bash
-    javac com/ecommerce/model/Product.java com/ecommerce/search/SearchAlgorithm.java com/ecommerce/Main.java
+    # The command uses forward slashes for the path and compiles all necessary files
+    javac com/example/document/*.java com/example/factory/*.java com/example/Main.java
     ```
 
-3.  **Run the application.** Use the `java` command with the fully qualified name of the main class (`package.ClassName`).
+3.  **Run the application.** Use the `java` command with the fully qualified name of the main class.
 
     ```bash
-    java com.ecommerce.Main
+    java com.example.Main
     ```
 
 </details>
 
-## 📊 Analysis and Recommendation
-
-| Metric                | Linear Search      | Binary Search        |
-| --------------------- | ------------------ | -------------------- |
-| **Time Complexity**   | $O(n)$             | $O(\log n)$          |
-| **Data Prerequisite** | Unsorted or Sorted | **Must be Sorted** |
-| **Scalability**       | Poor               | Excellent            |
-
-**Recommendation:** For any production e-commerce platform, **Binary Search** (and the principles behind it) is the only viable option. The performance degradation of Linear Search with large catalogs leads to poor user experience. The initial cost of sorting the data ($O(n \log n)$) is a necessary trade-off for achieving near-instantaneous search times.
-
-In a real-world scenario, this logic is implemented using database indexes (B-Trees) or dedicated search engines like Elasticsearch, which are built on these efficient principles.
-
 ## ✅ Expected Output
 
-A successful run will produce the following output, demonstrating the successful execution of both searches. (Note: timing values will vary).
+A successful run will produce the following output in your terminal:
 
 ````
 
-### Linear Search Demonstration
+\--- Document Management System ---
 
-## Result: Product[ID=P004, Name=Book, Category=Books] Linear Search took: 702500 ns
+Using Word Document Factory:
+Opening Word document...
+Saving Word document...
+Closing Word document...
 
-### Binary Search Demonstration
+Using PDF Document Factory:
+Opening PDF document...
+Saving PDF document...
+Closing PDF document...
 
-Array has been sorted by productId for binary search.
+Using Excel Document Factory:
+Opening Excel document...
+Saving Excel document...
+Closing Excel document...
 
-## Result: Product[ID=P004, Name=Book, Category=Books] Binary Search took: 16800 ns
+\--- System Shutdown ---
 
 ```
+
+## 📄 License
+
+This project is distributed under the MIT License. See the `LICENSE` file for more information.
+
 ```
