@@ -1,5 +1,5 @@
 ```markdown
-# 🏭 Factory Method Pattern: Document Management System
+🏭 Factory Method Pattern: Document Management System
 
 ![Language](https://img.shields.io/badge/Language-Java-blue.svg)
 ![Design Pattern](https://img.shields.io/badge/Design%20Pattern-Factory%20Method-orange)
