@@ -1,11 +1,5 @@
-Here is the full `README.md` content for your **Recursive Financial Forecasting Tool (INR)** project. You can copy and paste this directly into your file:
 
-```markdown
-# 📈 Recursive Financial Forecasting Tool (INR)
-
-![Language](https://img.shields.io/badge/Language-Java-blue.svg)
-![Algorithm](https://img.shields.io/badge/Algorithm-Recursion%20&%20Memoization-green.svg)
-![License](https://img.shields.io/badge/License-MIT-yellow.svg)
+## 📈 Recursive Financial Forecasting Tool (INR)
 
 This project provides a Java-based implementation of a financial forecasting tool using **recursion**. It demonstrates how to model future value calculations and explains the importance of optimization techniques like **memoization**. This version is localized to use the Indian Rupee (₹) as the currency symbol.
 
