@@ -1,126 +1,118 @@
 
-# ⚡ E-Commerce Platform: Search Algorithm Analysis
+# 🏭 Factory Method Pattern: Document Management System
 
-This repository contains a technical analysis and implementation of search algorithms for an e-commerce platform. It demonstrates the critical performance differences between Linear and Binary Search and provides a recommendation for building scalable systems.
+## 🧠 About the Factory Method Pattern
 
----
+The Factory Method is a creational design pattern that solves the problem of creating product objects without specifying their concrete classes.
 
-## 📂 Table of Contents
+> The Factory Method defines an interface for creating an object, but lets subclasses decide which class to instantiate. This lets a class defer instantiation to its subclasses.
 
-- [🌐 Project Overview](#-project-overview)
-- [💡 Core Concepts Explained](#-core-concepts-explained)
-- [🏗️ Project Structure](#️-project-structure)
-- [🚀 How to Compile and Run](#-how-to-compile-and-run)
-- [📊 Analysis and Recommendation](#-analysis-and-recommendation)
-- [✅ Expected Output](#-expected-output)
-
----
-
-## 🌐 Project Overview
-
-A fast and reliable search function is essential for a positive user experience on any e-commerce site. This project analyzes two fundamental search algorithms—**Linear Search** and **Binary Search**—to illustrate the importance of algorithmic efficiency. It serves as a practical guide to understanding why choosing the right algorithm is critical for application performance and scalability.
-
----
-
-## 💡 Core Concepts Explained
-
-### 📈 Asymptotic Notation (Big O)
-
-Big O notation describes an algorithm's performance as the input size ($n$) grows. It provides insight into scalability by focusing on the **worst-case scenario**:
-
-- **O(n) - Linear Time:** Time grows linearly with input size. Doubling data ≈ doubling time.
-- **O(log n) - Logarithmic Time:** Time grows slowly even as data increases exponentially. A hallmark of efficient algorithms.
+### Key Benefits Demonstrated:
+- **Loose Coupling**: The client code (in `Main.java`) is decoupled from the concrete product implementations (`WordDocument`, `PdfDocument`, etc.).
+- **Extensibility (Open/Closed Principle)**: The system can be easily extended to support new document types (e.g., `CsvDocument`) by adding a new product class and a corresponding factory, all without modifying existing client code.
 
 ---
 
 ## 🏗️ Project Structure
 
-The project uses a standard Java package-based structure:
+The project follows a standard Java package structure to maintain a clean separation of concerns between the product, the creator, and the client.
 
 ```
-.
-└── src
-    └── com
-        └── ecommerce
-            ├── model
-            │   └── Product.java           # Data entity for a product
-            ├── search
-            │   └── SearchAlgorithm.java  # Contains the search logic
-            └── Main.java                 # Main application entry point/test harness
+Week1_Design Patterns and  Priciples_Solutions/
+├── 02_Implementing_the_Factory_Method_Pattern/
+│
+├── Code/
+│   └── src/
+│       └── com/
+│           └── example/
+│               ├── document/
+│               │   ├── Document.java
+│               │   ├── ExcelDocument.java
+│               │   ├── PdfDocument.java
+│               │   └── WordDocument.java
+│               │
+│               ├── factory/
+│               │   ├── DocumentFactory.java
+│               │   ├── ExcelDocumentFactory.java
+│               │   ├── PdfDocumentFactory.java
+│               │   └── WordDocumentFactory.java
+│               │
+│               └── Main.java
+│
+└── Output/
+    └── factory_method_output.png 
 ```
+
+---
+
+## ⚙️ Prerequisites
+
+To build and run this project from the command line, you need:
+
+- Java Development Kit (JDK) - Version 8 or higher.
+- A terminal or command-line interface (CLI).
 
 ---
 
 ## 🚀 How to Compile and Run
 
-> **📌 Note:** All commands **must** be run from the `src` directory.
+> **📌 Note:** All commands **must** be executed from the `src` directory. This is the root of the package structure (`com/example/...`) and is crucial for the Java compiler (`javac`) to locate the files correctly.
 
 ### 🪟 Windows (Command Prompt / PowerShell)
 
 ```powershell
-# Navigate to src directory
-cd \path	o\your\project\ECommerceSearchOptimization\src
+# Replace the path with the actual path to your project
+cd "E:\path\to\your\project\FactoryMethodPatternExample\code\src"
 
 # Compile the Java source files
-javac com\ecommerce\model\Product.java com\ecommerce\search\SearchAlgorithm.java com\ecommerce\Main.java
+javac com\example\document\*.java com\example\factory\*.java com\example\Main.java
 
 # Run the application
-java com.ecommerce.Main
+java com.example.Main
 ```
 
 ### 🍎 macOS / 🐧 Linux (Bash / Zsh)
 
 ```bash
-# Navigate to src directory
-cd /path/to/your/project/ECommerceSearchOptimization/src
+# Replace the path with the actual path to your project
+cd /path/to/your/project/FactoryMethodPatternExample/code/src
 
 # Compile the Java source files
-javac com/ecommerce/model/Product.java com/ecommerce/search/SearchAlgorithm.java com/ecommerce/Main.java
+javac com/example/document/*.java com/example/factory/*.java com/example/Main.java
 
 # Run the application
-java com.ecommerce.Main
+java com.example.Main
 ```
-
----
-
-## 📊 Analysis and Recommendation
-
-| Metric                | Linear Search      | Binary Search        |
-|----------------------|--------------------|----------------------|
-| **Time Complexity**   | O(n)               | O(log n)             |
-| **Data Prerequisite** | Unsorted or Sorted | Must be Sorted       |
-| **Scalability**       | Poor               | Excellent             |
-
-### ✅ Recommendation
-
-For production-level e-commerce platforms, **Binary Search** (or equivalent scalable mechanisms) is essential. Although Binary Search requires sorted data (with $O(n \log n)$ sorting cost), it delivers **exponentially better performance** as data scales.
-
-In real-world systems, such search functionality is often supported via:
-
-- **Database indexes** (e.g., B-Trees)
-- **Search engines** (e.g., Elasticsearch)
-
-These tools use principles derived from Binary Search to ensure fast, scalable performance.
 
 ---
 
 ## ✅ Expected Output
 
-Successful execution yields:
+A successful run will produce the following output in your terminal:
 
 ```
-### Linear Search Demonstration
-Result: Product[ID=P004, Name=Book, Category=Books]
-Linear Search took: 702500 ns
+--- Document Management System ---
 
-### Binary Search Demonstration
-Array has been sorted by productId for binary search.
-Result: Product[ID=P004, Name=Book, Category=Books]
-Binary Search took: 16800 ns
+Using Word Document Factory:
+Opening Word document...
+Saving Word document...
+Closing Word document...
+
+Using PDF Document Factory:
+Opening PDF document...
+Saving PDF document...
+Closing PDF document...
+
+Using Excel Document Factory:
+Opening Excel document...
+Saving Excel document...
+Closing Excel document...
+
+--- System Shutdown ---
 ```
-
-> ⏱️ Note: Timing values may vary by machine and runtime.
 
 ---
 
-> Made with 💻 and a passion for performance optimization.
+## 📄 License
+
+This project is distributed under the MIT License. See the `LICENSE` file for more information.
