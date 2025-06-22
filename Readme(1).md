@@ -91,16 +91,16 @@ Running the `main` method will produce the following output, formatted with the 
 
 ```plaintext
 ### Financial Forecasting Tool (INR) ###
-Initial Investment: ₹100000.00
+Initial Investment: Rs.100000.00
 Annual Growth Rate: 8.00%
 Forecasting Period: 15 years
 ----------------------------------------
 
 1. Simple Recursive Calculation:
-Predicted Future Value: ₹317216.91
+Predicted Future Value: Rs.317216.91
 
 2. Optimized Recursive Calculation (with Memoization):
-Predicted Future Value: ₹317216.91
+Predicted Future Value: Rs.317216.91
 ```
 
 ---
