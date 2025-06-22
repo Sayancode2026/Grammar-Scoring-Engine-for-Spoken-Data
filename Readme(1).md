@@ -107,7 +107,4 @@ Predicted Future Value: Rs.317216.91
 
 > Made with 💡 recursion and a passion.
 
-```
 
-Let me know if you’d like this content as a downloadable file later once tools are working again.
-```
